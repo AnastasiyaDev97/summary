@@ -1,0 +1,60 @@
+@import "./../../../common/styles/sass/variables";
+
+.projectWrapper {
+  width: 280px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  .imgContainer {
+    height: 100%;
+    position: relative;
+    &:hover::after{
+      position: absolute;
+      content: '';
+      background: black;
+      opacity:0.5;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+    &:hover .imgProject {
+      transform: scale(1.2);
+    }
+    &:hover .linkToProject {
+      display: flex;
+    }
+  }
+  .imgProject {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+  }
+  .linkToProject {
+    transition-duration: .3s;
+    transition-property:display;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 15px;
+    border: 2px solid $captionColor;
+    z-index: 2;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color:$captionColor;
+  }
+}
+
+
+
+
+
+
+
+

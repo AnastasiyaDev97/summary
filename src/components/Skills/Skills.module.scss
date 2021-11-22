@@ -1,0 +1,20 @@
+@import "./../../common/styles/sass/variables";
+.skillsBlock {
+    padding: 80px 0 50px;
+    border-top: 1px solid #323641;
+}
+
+.skillsContainer {
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*
+@media (max-width: 1017px) {
+    .skills {
+        align-items: center;
+        flex-direction: column;
+    }
+}*/

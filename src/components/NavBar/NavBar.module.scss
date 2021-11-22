@@ -1,0 +1,48 @@
+@import "./../../common/styles/sass/variables";
+
+.navbarContainer {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  background: $secondBgColor;
+  z-index: 1000;
+  padding-left: 40px;
+  padding-right: 15px;
+  overflow-y: auto;
+  -webkit-transition: all .3s;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+
+    & a {
+      text-decoration: none;
+      color: $inactiveColor;
+      padding: 6px 0;
+      text-transform: capitalize;
+      font-size: 17px;
+      user-select: none;
+      -webkit-transition: .25s;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 5px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .navFooter {
+    line-height: 1.6;
+    color: $textColor;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 30px;
+  }
+}

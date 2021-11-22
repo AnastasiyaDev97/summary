@@ -1,19 +1,19 @@
 import React from "react";
-import styles from './Footer.module.css'
+import styles from './Footer.module.scss'
 import styleContainer from './../../common/styles/Container.module.css'
 
 export const Footer = () => {
     return (
         <div className={styles.footerBlock}>
             <div className={`${styleContainer.containerBlock} ${styles.containerFooter}`}>
-                <h3>Anastasiya Zabolotskikh</h3>
                 <div className={styles.wrapper}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <a href={'#'}>Linkedin</a>
+                    <a href={'#'}>GitHub</a>
+                    <a href={'#'}>Telegram</a>
+                    <a href={'#'}>Facebook</a>
+                    <a href={'#'}>Vk</a>
                 </div>
-                <span>2021 &copy; All rights reserved</span>
+                <p className={styles.copyright}>2021 &copy; All rights reserved</p>
             </div>
         </div>
     )

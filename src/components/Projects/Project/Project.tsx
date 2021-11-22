@@ -1,23 +1,24 @@
 import React from "react";
-import styles from './Project.module.css'
+import styles from './Project.module.scss'
 
 type ProjectPropsType = {
     title: string
     description: string
-    projectPhoto: string
     linkToProject: string
+    imgProject: string
 }
 
 export const Project = (props: ProjectPropsType) => {
     return (
         <div className={styles.projectWrapper}>
             <div className={styles.imgContainer}>
-                <a href={props.linkToProject}>View</a>
+                <img src={props.imgProject} className={styles.imgProject} alt={'myProject'}/>
+                <a className={styles.linkToProject} href={props.linkToProject}>
+                    {props.title}
+                </a>
             </div>
-            <div className={styles.descriptionBlock}>
-                <span>{props.title}</span>
-                <div>{props.description}</div>
-            </div>
+
+
         </div>
     )
 }

@@ -1,0 +1,48 @@
+@import "./../../../common/styles/sass/variables";
+
+.skillBlock {
+  padding: 0 15px 30px;
+  font-family: 'Montserrat', sans-serif;
+  flex: 0 0 25%;
+  max-width: 25%;
+
+
+  .logoBlock {
+
+    .skillLogo {
+      color: $captionColor;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 30px;
+    }
+
+    .skillTitle {
+      color: $primaryColor;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+
+  .description {
+    width: 100%;
+    color: $textColor;
+    line-height: 1.75;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+}
+
+
+/*@media (max-width: 1017px) {
+    .skillBlock {
+        width: 300px;
+    }
+}
+
+@media (max-width: 403px) {
+    .skillBlock {
+        width: 100%;
+    }
+}*/

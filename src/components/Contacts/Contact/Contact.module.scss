@@ -1,0 +1,19 @@
+@import "./../../../common/styles/sass/variables";
+
+.contactWrapper{
+  position: relative;
+  .logoContacts{
+    position: absolute;
+    left:0;
+    color: #3deaa4;
+    font-size: 14px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+  }
+  .contactText{
+    color: $textColor;
+    padding-left: 25px;
+    margin-bottom: 3px;
+    line-height: 1.8;
+  }
+}

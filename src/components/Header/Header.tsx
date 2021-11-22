@@ -1,11 +1,15 @@
 import React from "react";
-import styles from './Header.module.css'
-import {NavBar} from "../NavBar/NavBar";
+import styles from './Header.module.scss'
+import styleContainer from "../../common/styles/Container.module.css";
+
 
 export const Header = () => {
     return (
-        <div className={styles.header}>
-            <NavBar/>
-        </div>
+        <header className={styles.header}>
+            <div className={`${styleContainer.containerBlock} ${styles.headerContainer}`}>
+                <span className={styles.headerLogo}>Anastasiya Zabolotskikh</span>
+                <a href={'#'} className={styles.headerLink}>Download CV</a>
+            </div>
+        </header>
     )
 }

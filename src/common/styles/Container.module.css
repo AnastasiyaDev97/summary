@@ -1,6 +1,8 @@
 .containerBlock {
-    width: 80%;
+    /*width: 80%;
     margin: 0 auto;
     border: 1px solid;
-    display: flex;
+    display: flex;*/
+    padding-left: 40px;
+    padding-right: 40px;
 }

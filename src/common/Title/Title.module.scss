@@ -1,0 +1,29 @@
+@import './../styles/sass/variables.scss';
+
+.wrapperTitle{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    .title{
+        display: inline-block;
+        font-size: 23px;
+        margin-bottom: 70px;
+        color: $captionColor;
+        line-height: 1;
+        position: relative;
+        font-weight: 400;
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
+        margin-top: 0;
+        &::after{
+            position: absolute;
+            content: url('./../../assets/image/zigzag.svg');
+            top: 35px;
+            left: 0;
+            -webkit-transform: rotateX(180deg);
+        }
+    }
+}
+
+

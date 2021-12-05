@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Contacts.module.scss'
-import styleContainer from './../../common/styles/Container.module.css'
+import styleContainer from '../../common/styles/Container.module.scss'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faHouseUser} from '@fortawesome/free-solid-svg-icons'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'

@@ -12,7 +12,16 @@
     justify-content: space-between;
     flex-wrap: wrap;
     @media (max-width: 1161px) {
-      justify-content: space-around;
+      justify-content: space-between;
+    }
+    @media (max-width: 989px) {
+      justify-content: center;
+    }
+    @media (max-width: 773px) {
+      justify-content: space-between;
+    }
+    @media (max-width: 719px) {
+      justify-content: center;
     }
   }
 }

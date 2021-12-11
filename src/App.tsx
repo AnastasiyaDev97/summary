@@ -13,12 +13,12 @@ function App() {
         <div>
             <NavBar/>
             <div className={'mainContent'}>
-            <Header/>
-            <Main/>
-            <Skills/>
-            <Projects/>
-            <Contacts/>
-            <Footer/>
+                <Header/>
+                <Main/>
+                <Skills/>
+                <Projects/>
+                <Contacts/>
+                <Footer/>
             </div>
         </div>
     );

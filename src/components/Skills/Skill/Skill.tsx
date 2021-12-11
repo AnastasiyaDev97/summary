@@ -6,12 +6,17 @@ import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
 type SkillPropsType = {
     title: string
-    description: string
+    progress: string
     logoTypeIcon?: IconProp
     logoType?: string
 }
 
 export const Skill = (props: SkillPropsType) => {
+    const progressStyle = {
+        background: '#fff',
+        height: '100%',
+        width: props.progress,
+    }
     return (
         <div className={styles.skillBlock}>
             <div className={styles.logoBlock}>
@@ -20,7 +25,10 @@ export const Skill = (props: SkillPropsType) => {
                     : <img src={props.logoType} className={styles.skillLogo} alt={'logoIcon'}/>}
                 <h4 className={styles.skillTitle}>{props.title}</h4>
             </div>
-            <div className={styles.description}>{props.description}</div>
+            <div className={styles.progress}>
+                <span className={styles.percent}>{props.progress}</span>
+                <div style={progressStyle}></div>
+            </div>
         </div>
     )
 }

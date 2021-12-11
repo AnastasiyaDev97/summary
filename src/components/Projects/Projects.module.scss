@@ -1,22 +1,30 @@
 @import "./../../common/styles/sass/variables";
 
 .projectsWrapper {
-    padding: 80px 0;
-    border-top: 1px solid $borderColor;
-    .projects {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+  padding: 80px 0;
+  border-top: 1px solid $borderColor;
+  @media (max-width: 526px) {
+    padding: 65px 0;
+  }
 
+  .projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width: 1161px) {
+      justify-content: space-between;
     }
+    @media (max-width: 989px) {
+      justify-content: center;
+    }
+    @media (max-width: 773px) {
+      justify-content: space-between;
+    }
+    @media (max-width: 719px) {
+      justify-content: center;
+    }
+  }
 }
 
 
 
-
-/*
-@media (max-width: 769px) {
-    .projects {
-        justify-content: center;
-    }
-}*/

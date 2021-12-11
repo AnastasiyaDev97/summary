@@ -1,36 +1,51 @@
 @import "./../../common/styles/sass/variables";
+@import "./../../common/styles/sass/mixins";
 
 .footerBlock {
-    padding: 80px 0;
-    border-top: 1px solid $borderColor;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    .wrapper{
-        display: flex;
-        justify-content: center;
-        & a{
-            text-decoration: none;
-            color: #aaa;
-            display: inline-block;
-            padding: 0 8px;
-            margin-bottom: 4px;
-            cursor: pointer;
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
+  padding: 80px 0;
+  border-top: 1px solid $borderColor;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  @media (max-width: 1281px) {
+    padding: 50px 0;
+  }
+  @media (max-width: 773px) {
+    padding: 30px 0;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+
+    & a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 8px;
+      margin-bottom: 4px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 1.5;
+      transition: 1s color ease;
+      @include text($MontserratFontFamily,1rem,#aaa,400);
+      @media (max-width: 773px) {
+        font-size: .8rem;
+      }
+      &:hover{
+        color:$primaryColor;
+      }
     }
-    .copyright{
-        margin-top: 10px;
-        font-size: 15px;
-        color: #fff;
-        line-height: 1.8;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
+  }
+
+  .copyright {
+    margin-top: 10px;
+    line-height: 1.8;
+    text-align: center;
+    @include text($MontserratFontFamily,15px,#fff,400);
+    @media (max-width: 773px) {
+      font-size: .8rem;
     }
+  }
 }
 
 

@@ -1,48 +1,111 @@
 @import "./../../../common/styles/sass/variables";
+@import "./../../../common/styles/sass/mixins";
 
 .skillBlock {
   padding: 0 15px 30px;
   font-family: 'Montserrat', sans-serif;
   flex: 0 0 25%;
-  max-width: 25%;
-
+  @media (max-width: 1281px) {
+    flex: 0 0 33.3%;
+  }
+  @media (max-width: 965px) {
+    flex: 0 0 40%;
+    padding: 0 15px 60px;
+  }
+  @media (max-width: 614px) {
+    flex: 0 0 45%;
+  }
+  @media (max-width: 407px) {
+    flex: 0 0 100%;
+  }
 
   .logoBlock {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      right: 0;
+      top: 0;
+      background: $captionColor;
+      width: 1px;
+      height: 0;
+      transition-property: height;
+      transition-duration: .5s;
+    }
+
+    &:hover::before {
+      height: 20px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      right: 0;
+      top: 0;
+      background: $captionColor;
+      width: 0;
+      height: 1px;
+      transition-property: width;
+      transition-duration: .5s;
+    }
+
+    &:hover::after {
+      width: 20px;
+    }
+
+    &:hover .skillTitle::before {
+      width: 20%;
+    }
 
     .skillLogo {
       color: $captionColor;
       width: 30px;
       height: 30px;
       margin-bottom: 30px;
+      @media (max-width: 614px) {
+        margin-bottom: 15px;
+      }
     }
 
     .skillTitle {
-      color: $primaryColor;
-      font-size: 20px;
-      font-weight: 500;
       line-height: 1.2;
+      position: relative;
+      z-index: 5;
+      @include text($MontserratFontFamily,20px,$primaryColor,300);
+      &::before {
+        position: absolute;
+        content: '';
+        background: $captionColor;
+        opacity: .5;
+        width: 0;
+        height: 40%;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        transition-property: width;
+        transition-duration: .5s;
+      }
+
     }
   }
 
-  .description {
+  .progress {
+    margin-top: 25px;
     width: 100%;
-    color: $textColor;
-    line-height: 1.75;
-    margin-top: 15px;
-    font-size: 15px;
-    font-weight: 300;
+    height: 4px;
+    background: $inactiveColor;
+    opacity: .5;
+    position: relative;
+
+    .percent {
+      position: absolute;
+      content: '';
+      top: -30px;
+      right: 0;
+      color: white;
+    }
   }
 }
 
 
-/*@media (max-width: 1017px) {
-    .skillBlock {
-        width: 300px;
-    }
-}
-
-@media (max-width: 403px) {
-    .skillBlock {
-        width: 100%;
-    }
-}*/

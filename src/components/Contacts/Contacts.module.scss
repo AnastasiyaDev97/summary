@@ -1,4 +1,5 @@
 @import "./../../common/styles/sass/variables";
+@import "./../../common/styles/sass/mixins";
 
 .contactsBlock {
   padding: 80px 0;
@@ -11,17 +12,21 @@
 
     .getInTouchBlock {
       flex: 0 0 41.666667%;
-      max-width: 41.666667%;
       width: 100%;
       padding-right: 15px;
       padding-left: 15px;
+      @media (max-width: 1174px) {
+        flex: 0 0 20.333333%;
+      }
+      @media (max-width: 1069px) {
+        margin-bottom: 30px;
+        flex: 0 0 60%;
+      }
 
       .contactsTitle {
-        color: $primaryColor;
-        font-weight: 800;
-        font-size: 22px;
         margin-bottom: 10px;
         margin-top: -4px;
+        @include text($MontserratFontFamily,22px,$primaryColor,800);
       }
     }
 
@@ -30,11 +35,14 @@
       padding-right: 15px;
       padding-left: 15px;
       flex: 0 0 58.333333%;
-      max-width: 58.333333%;
-
       display: flex;
       flex-direction: column;
-
+      @media (max-width: 1174px) {
+        flex: 0 0 65.333333%;
+      }
+      @media (max-width: 1069px) {
+        flex: 0 0 100%;
+      }
       .row {
         display: flex;
         flex-wrap: wrap;
@@ -46,29 +54,32 @@
           padding-right: 15px;
           padding-left: 15px;
           flex: 0 0 41.666667%;
-          max-width: 41.666667%;
+
+          @media (max-width: 604px) {
+            flex: 0 0 100%;
+          }
 
           & input {
+            @include text($MontserratFontFamily,15px,$primaryColor,300);
             width: 100%;
             background-color: transparent;
-            color: $primaryColor;
             margin-bottom: 30px;
-            font-size: 15px;
-            font-weight: 300;
             padding: 8px 12px;
             border: 1px solid #888;
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.5;
+            line-height:1.5;
           }
         }
 
         .textareaWrapper {
           flex: 0 0 58.333333%;
-          max-width: 58.333333%;
+
           width: 100%;
           padding-right: 15px;
           padding-left: 15px;
           color: $primaryColor;
+          @media (max-width: 604px) {
+            flex: 0 0 100%;
+          }
 
           .textarea {
             resize: none;
@@ -83,6 +94,7 @@
             line-height: 1.5;
             width: 100%;
             font-family: 'Montserrat', sans-serif;
+
           }
         }
       }
@@ -105,29 +117,6 @@
       }
     }
   }
-
-
-  /* color: $primaryColor;
-   margin-bottom: 30px;
-   font-size: 15px;
-   font-weight: 300;
-   padding: 8px 12px;
-   border: 1px solid #888;*/
 }
 
 
-/*.formWrapper > * {
-  margin-bottom: 10px;
-}
-
-.formWrapper > textarea {
-  margin-bottom: 0;
-}*/
-
-
-/*
-@media (max-width: 693px) {
-    .formWrapper {
-        width: 80%;
-    }
-}*/

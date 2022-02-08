@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC, memo} from "react";
 import styles from './Project.module.scss'
 
 type ProjectPropsType = {
@@ -8,17 +8,19 @@ type ProjectPropsType = {
     imgProject: string
 }
 
-export const Project = (props: ProjectPropsType) => {
-    return (
-        <div className={styles.projectWrapper}>
-            <div className={styles.imgContainer}>
-                <img src={props.imgProject} className={styles.imgProject} alt={'myProject'}/>
-                <a className={styles.linkToProject} href={props.linkToProject}>
-                    {props.title}
-                </a>
+export const Project: FC<ProjectPropsType> = memo(({title,description,linkToProject,imgProject}) => {
+        return (
+            <div className={styles.projectBlock}>
+            <div className={styles.projectWrapper}>
+                <div className={styles.imgContainer}>
+                    <img src={imgProject} className={styles.imgProject} alt={'myProject'}/>
+                    <a className={styles.linkToProject} href={linkToProject} target='_blank'>
+                        {title}
+                    </a>
+                </div>
             </div>
-
-
-        </div>
-    )
-}
+                <span className={styles.description}>{description}</span>
+            </div>
+        )
+    }
+)

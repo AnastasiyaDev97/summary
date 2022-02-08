@@ -1,14 +1,15 @@
 import React from "react";
 import styles from './NavBar.module.scss'
+import {Scrollchor} from "react-scrollchor";
 
 export const NavBar = () => {
     return (
         <div className={styles.navbarContainer}>
             <nav className={styles.nav}>
-                <a href="#">Main</a>
-                <a href="#">Skills</a>
-                <a href="#">Projects</a>
-                <a href="#">Contacts</a>
+                <Scrollchor to="#main">Main</Scrollchor>
+                <Scrollchor to="#skills">Skills</Scrollchor>
+                <Scrollchor to="#projects" >Projects</Scrollchor>
+                <Scrollchor to="#contacts" >Contacts</Scrollchor>
             </nav>
             <div className={styles.navFooter}>
                 &copy; Copyright

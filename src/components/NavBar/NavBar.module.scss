@@ -36,9 +36,6 @@
       position: relative;
       z-index: 1;
       @include text($MontserratFontFamily,17px,$inactiveColor,400);
-    /*  transition-property: color;
-      transition-timing-function: ease;
-      transition-duration: 1s;*/
       transition: 1s color ease;
       &:hover{
         color:$primaryColor;

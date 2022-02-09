@@ -13,7 +13,7 @@ function App() {
         <div>
             <NavBar/>
             <div className={'mainContent'}>
-                <Header/>
+                {/*<Header/>*/}
                 <Main/>
                 <Skills/>
                 <Projects/>

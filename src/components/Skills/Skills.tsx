@@ -14,9 +14,6 @@ import redux from './../../assets/image/redux.svg'
 
 
 export const Skills = () => {
-
-
-
     return (
             <div className={styles.skillsBlock} id="skills">
                 <div className={`${styleContainer.containerBlock} ${styles.skillsContainer}`}>
@@ -30,9 +27,7 @@ export const Skills = () => {
                         <Skill title={'Jest'} progress={'55%'} logoType={jest}/>
                         <Skill title={'Git'} progress={'40%'} logoTypeIcon={faGit}/>
                         <Skill title={'Storybook'} progress={'60%'} logoType={storybook}/>
-
                     </div>
-
                 </div>
             </div>
     )

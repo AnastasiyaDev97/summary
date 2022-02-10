@@ -1,12 +1,11 @@
 import React from "react";
 import styles from './Main.module.scss'
 import styleContainer from '../../common/styles/Container.module.scss'
-import myPhoto from './myPhoto.jpg'
+import myPhoto from './../../assets/image/me16.jpg'
 
 
 export const Main = () => {
     return (
-
             <div className={styles.mainBlock} id="main">
                 <div className={`${styleContainer.containerBlock} ${styles.containerMain}`}>
                     <div className={styles.photoContainer}>

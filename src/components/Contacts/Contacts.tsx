@@ -7,6 +7,7 @@ import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import {Contact} from "./Contact/Contact";
 import {FormForContacts} from "./FormForContacts/FormForContacts";
 import {MySnackbar} from "../SnackBar/SnackBar";
+const Fade = require("react-reveal/Fade")
 
 
 export const Contacts = () => {
@@ -23,6 +24,7 @@ export const Contacts = () => {
     return (
         <div className={styles.contactsBlock} id='contacts'>
             <MySnackbar isModalShow={isModalShow} toggleEditModal={toggleEditModal}/>
+            <Fade top>
             <div className={`${styleContainer.containerBlock} ${styles.containerContacts}`}>
                 <div className={styles.getInTouchBlock}>
                     <h4 className={styles.contactsTitle}>Get in Touch</h4>
@@ -33,6 +35,7 @@ export const Contacts = () => {
                 </div>
                 <FormForContacts toggleEditModal={toggleEditModal}/>
             </div>
+            </Fade>
         </div>
     )
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from './Skills.module.scss'
 import styleContainer from '../../common/styles/Container.module.scss'
 import {Skill} from "./Skill/Skill";
@@ -11,11 +10,13 @@ import typescript from './../../assets/image/typescript.svg'
 import storybook from './../../assets/image/storybook.svg'
 import jest from './../../assets/image/jest.svg'
 import redux from './../../assets/image/redux.svg'
+const Fade = require("react-reveal/Fade")
 
 
 export const Skills = () => {
     return (
             <div className={styles.skillsBlock} id="skills">
+                <Fade top>
                 <div className={`${styleContainer.containerBlock} ${styles.skillsContainer}`}>
                     <Title titleText={'Skills'}/>
                     <div className={styles.skills}>
@@ -29,6 +30,7 @@ export const Skills = () => {
                         <Skill title={'Storybook'} progress={'60%'} logoType={storybook}/>
                     </div>
                 </div>
+                </Fade>
             </div>
     )
 }

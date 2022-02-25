@@ -6,6 +6,7 @@ import todolistImg from './../../assets/image/p1.jpg'
 import socialNetwork from './../../assets/image/p2.jpg'
 import cardsApp from './../../assets/image/p3.jpg'
 import {Title} from "../../common/Title/Title";
+const Fade = require("react-reveal/Fade")
 
 
 export const Projects = () => {
@@ -31,6 +32,7 @@ export const Projects = () => {
 
     return (
         <div className={styles.projectsWrapper} id="projects">
+            <Fade top>
             <div className={styleContainer.containerBlock}>
                 <Title titleText={'My projects'}/>
                 <div className={styles.projects}>
@@ -41,6 +43,7 @@ export const Projects = () => {
                 </div>
 
             </div>
+            </Fade>
         </div>
     )
 }

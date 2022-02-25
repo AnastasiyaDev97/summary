@@ -12,8 +12,8 @@ function App() {
     return (
         <div>
             <NavBar/>
-            <div className={'mainContent'}>
-               {/* <Header/>*/}
+            <div className='mainContent'>
+                {/* <Header/> */}
                 <Main/>
                 <Skills/>
                 <Projects/>

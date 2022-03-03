@@ -1,6 +1,7 @@
 import React, {FC, forwardRef, memo} from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, {AlertProps} from '@mui/material/Alert';
+import { SnackbarTextType } from '../../enums';
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props, ref) {
@@ -10,10 +11,11 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
 type MySnackbarType = {
     isModalShow: boolean
     toggleEditModal: (value: boolean) => void
+    text:SnackbarTextType
 }
 
-export const MySnackbar: FC<MySnackbarType> = memo(({toggleEditModal, isModalShow}) => {
-        /*   const [open, setOpen] = useState(false);*/
+export const MySnackbar: FC<MySnackbarType> = memo(({toggleEditModal, isModalShow,text}) => {
+        
 
         const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
             if (reason === 'clickaway') {
@@ -25,7 +27,7 @@ export const MySnackbar: FC<MySnackbarType> = memo(({toggleEditModal, isModalSho
         return (
             <Snackbar open={isModalShow} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="success" sx={{width: '100%'}}>
-                    Your message was sent successfully!
+                    {text}
                 </Alert>
             </Snackbar>
         );

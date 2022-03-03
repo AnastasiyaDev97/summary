@@ -2,12 +2,17 @@ import styles from "./FormForContacts.module.scss";
 import React, {FC, memo} from "react";
 import {useFormik} from "formik";
 import {sendMessage} from "../../../api/contacts/contactsAPI";
+import { SnackbarTextType } from "../../../enums";
 
 type FormForContactsType = {
     toggleEditModal: (value: boolean) => void
+    setTextSnackbar:(text:SnackbarTextType)=>void
 }
 
-export const FormForContacts: FC<FormForContactsType> = memo(({toggleEditModal}) => {
+export const FormForContacts: FC<FormForContactsType> = memo(({toggleEditModal,setTextSnackbar}) => {
+
+
+
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -15,8 +20,15 @@ export const FormForContacts: FC<FormForContactsType> = memo(({toggleEditModal})
             text: ''
         },
         onSubmit: values => {
+            if(!values.name||!values.email||!values.text){
+                setTextSnackbar(SnackbarTextType.err)
+                toggleEditModal(true)
+                return
+            }
+
             sendMessage(values)
             formik.resetForm()
+            setTextSnackbar(SnackbarTextType.success)
             toggleEditModal(true)
         },
     })

@@ -7,11 +7,15 @@ import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import {Contact} from "./Contact/Contact";
 import {FormForContacts} from "./FormForContacts/FormForContacts";
 import {MySnackbar} from "../SnackBar/SnackBar";
+import {SnackbarTextType} from "../../enums";
 const Fade = require("react-reveal/Fade")
 
 
 export const Contacts = () => {
+const {success}=SnackbarTextType
+
     const [isModalShow, setIsModalShow] = useState(false);
+    const [textSnackbar,setTextSnackbar] = useState<SnackbarTextType>(success)
 
     const toggleEditModal = useCallback((value: boolean) => {
         setIsModalShow(value)
@@ -23,7 +27,7 @@ export const Contacts = () => {
 
     return (
         <div className={styles.contactsBlock} id='contacts'>
-            <MySnackbar isModalShow={isModalShow} toggleEditModal={toggleEditModal}/>
+            <MySnackbar isModalShow={isModalShow} toggleEditModal={toggleEditModal} text={textSnackbar}/>
             <Fade top>
             <div className={`${styleContainer.containerBlock} ${styles.containerContacts}`}>
                 <div className={styles.getInTouchBlock}>
@@ -33,7 +37,7 @@ export const Contacts = () => {
                             <Contact key={i} icon={m.icon} spanText={m.spanText}/>)}
                     </div>
                 </div>
-                <FormForContacts toggleEditModal={toggleEditModal}/>
+                <FormForContacts toggleEditModal={toggleEditModal} setTextSnackbar={setTextSnackbar}/>
             </div>
             </Fade>
         </div>
